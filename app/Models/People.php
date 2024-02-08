@@ -10,6 +10,7 @@ class People extends Model
 {
     use HasFactory,SoftDeletes;
 
+    protected $connection = 'pgsql';
     protected $primaryKey = 'id_people';
     protected $guarded = ['id_people'];
 
