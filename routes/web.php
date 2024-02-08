@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\Auth\AuthController;
@@ -24,6 +25,8 @@ Route::get('/clear', function() {
     Artisan::call('route:clear');
     return "Cleared!";
 });
+
+URL::forceScheme('https');
 
 // Route::get('/login', [AuthController::class,'main'])->name('login');
 
