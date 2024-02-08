@@ -1,11 +1,11 @@
 {
-    "name": "Laravel Package Tutorial",
-    "short_name": "LPT",
+    "name": "Majmu' Manan",
+    "short_name": "MM",
     "start_url": "/index.php",
-    "background_color": "#6777ef",
-    "description": "Tutorial of Laravel Package",
+    "background_color": "#2a6354",
+    "description": "Majmu' Bani Abdul Manan",
     "display": "fullscreen",
-    "theme_color": "#6777ef",
+    "theme_color": "#2a6354",
     "icons": [
         {
             "src": "logo.PNG",

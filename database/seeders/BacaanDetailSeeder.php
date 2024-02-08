@@ -115,6 +115,9 @@ class BacaanDetailSeeder extends Seeder
                 'keterangan' => null,
             ],
 
+            //2
+            [],
+
             //3
             [
                 'bacaan_id' => '3',
@@ -284,6 +287,8 @@ class BacaanDetailSeeder extends Seeder
                 'ina' => null,
                 'keterangan' => null,
             ],
+
+
         ];
 
         foreach ($items as $item) {

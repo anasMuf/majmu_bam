@@ -24,7 +24,7 @@
     <!-- header End -->
 
     <!-- Mobile Section Start -->
-    <div class="mobile-style-8">
+    {{-- <div class="mobile-style-8">
         <ul>
             <li class="active">
                 <a href="{{ route('beranda') }}">
@@ -39,20 +39,20 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div> --}}
     <!-- Mobile Section End -->
 
     <!-- Search Section Start -->
     <section class="search-hotel-section section-b-space-2">
         <div class="custom-container">
-            <form class="form-style-6">
+            <form class="form-style-6 formCari">
                 <div class="form-style-flex">
                     <div class="search-box">
-                        <input type="search" class="form-control" placeholder="Cari Bacaan..">
+                        <input type="search" name="cari" class="form-control" placeholder="Cari Bacaan..">
                         <i class="ri-search-2-line"></i>
                     </div>
 
-                    <button button="button" class="filter-button btn">
+                    <button button="button" class="filter-button btn" id="btnCari">
                         <i class="ri-search-line"></i>
                     </button>
                 </div>
@@ -70,25 +70,45 @@
                     case.</p> --}}
             </div>
 
+            <div class="preloader" style="display: none;">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+
             <ul class="collection-product-list">
 
-                @forelse ($bacaans as $bacaan)
-                <li>
-                    <a href="{{ route('detail',['slug' => $bacaan->slug]) }}{{ $bacaan->cek_parent ? ($bacaan->cek_parent->segmen_parent != null ? '?type=segmen' : '') : '' }}" class="collection-product-box text-center">
-                        <div class="collection-image">
-                            <img src="{{ asset('assets/images/bacaan/tumb_bacaan.png') }}" class="img-fluid" alt="">
-                        </div>
-                        <div class="collection-content-bacaan">
-                            <h5>{{ $bacaan->judul_latin }}</h5>
-                        </div>
-                    </a>
-                </li>
-                @empty
-                    <h1 class="text-center">Data Kosong</h1>
-                @endforelse
 
             </ul>
         </div>
     </section>
     <!-- Collection Product Section End -->
 @endsection
+
+@push('js')
+    <script>
+        $(document).ready(function () {
+            dataContent()
+        });
+    </script>
+    <script>
+        function dataContent(param=null) {
+            $('.collection-product-list').hide()
+            $('.preloader').show()
+            $.get("{{ route('bacaan') }}", {
+                cari:param
+            }).done(function (data) {
+                $('.preloader').hide()
+                $('.collection-product-list').html(data.content).fadeIn()
+                $('.collection-product-list').show()
+
+            }).fail(function(xhr, status, error){
+
+            })
+        }
+
+        $('.formCari').submit(function(e){
+            e.preventDefault()
+            let cari = $('input[name=cari]').val()
+            dataContent(cari)
+        })
+    </script>
+@endpush

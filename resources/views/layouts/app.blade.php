@@ -6,6 +6,7 @@
     {{-- <meta name="theme-color" content="#6777ef"/>
     <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}"> --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +14,7 @@
     <meta name="description" content="Aplikasi Majmu' BAM dari Juruladen untuk Keluarga BAM">
     <meta name="keywords" content="majmu bam">
     <meta name="author" content="juruladen bam">
-    <link rel="icon" href="{{ asset('assets/images/favicon/2.svg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('logo.png') }}" type="image/x-icon">
     <link rel="shortcut icon" href="../" type="image/x-icon">
     <title>Majmu' BAM</title>
     <link rel="manifest" href="../manifest.json">
@@ -21,7 +22,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="majmu bam">
-    <meta name="msapplication-TileImage" content="{{ asset('assets/images/favicon/1.svg') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('logo.png') }}">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -44,9 +45,12 @@
     <!-- Style css -->
     <link id="change-link" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 
+    <!-- Majmu css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="{{ asset('assets/css/loading.css') }}">
+
     <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    href="{{ asset('assets/css/vendors/swiper/swiper-bundle.min.css') }}"
     />
 
     <style>
@@ -86,16 +90,17 @@
     {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
 
     <!-- pwa -->
-    {{-- <script src="{{ asset('/sw.js') }}"></script>
+    <script src="{{ asset('/sw.js') }}"></script>
     <script>
     if (!navigator.serviceWorker.controller) {
         navigator.serviceWorker.register("/sw.js").then(function (reg) {
             console.log("Service worker has been registered for scope: " + reg.scope);
         });
     }
-    </script> --}}
+    </script>
     <!-- Theme Option Setting Box End -->
 
+    <script src="{{ asset('assets/js/vendors/jquery/jquery-3.7.1.min.js') }}"></script>
     <!-- Bootstrap js-->
     <script src="{{ asset('assets/js/vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>
 
@@ -107,7 +112,14 @@
 
     <!-- Theme Setting js-->
     {{-- <script src="{{ asset('assets/js/theme-setting.js') }}"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ asset('assets/js/vendors/swiper/swiper-bundle.min.js') }}"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
     @stack('js')
 </body>
 

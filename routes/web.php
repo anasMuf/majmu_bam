@@ -28,6 +28,7 @@ Route::get('/clear', function() {
 // Route::get('/login', [AuthController::class,'main'])->name('login');
 
 Route::get('/', [BacaanController::class,'main'])->name('beranda');
+Route::get('/bacaan', [BacaanController::class,'cariContent'])->name('bacaan');
 Route::get('/baca/{slug}',[BacaanController::class,'detail'])->name('detail');
 
 Route::get('/profile/',[ProfileController::class,'main'])->name('profileGuest');

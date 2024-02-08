@@ -9,13 +9,25 @@ use Illuminate\Http\Request;
 
 class BacaanController extends Controller
 {
-    public function main()
+    public function main(Request $request)
     {
         $data['menu'] = 'beranda';
-        $data['bacaans'] = Bacaan::with('cek_parent')->get();
+
         // return $data['bacaans'];
         // return $data['bacaans'][2]->bacaan_detail[0]->segmen_parent;
         return view('bacaan.main',$data);
+    }
+
+    public function cariContent(Request $request)
+    {
+        $cari = strtolower($request->cari);
+        $bacaans = Bacaan::with('cek_parent')->
+        when($request->cari,function($q) use ($cari){
+            $q->whereRaw("lower(judul_latin) like '%$cari%'")->
+                orWhereRaw("lower(judul_arb) like '%$cari%'");
+        })->get();
+        $data['content'] = view('bacaan.content',['bacaans' => $bacaans])->render();
+        return response()->json($data);
     }
 
     public function detail(Request $request, $slug)
