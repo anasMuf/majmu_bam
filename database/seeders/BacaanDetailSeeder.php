@@ -116,7 +116,7 @@ class BacaanDetailSeeder extends Seeder
             ],
 
             //2
-            [],
+            // [],
 
             //3
             [
