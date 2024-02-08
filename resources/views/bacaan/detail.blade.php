@@ -88,12 +88,12 @@
                                 @forelse ($bacaan_details as $bacaan_detail)
                                     @if ($bacaan_detail->segmen_parent == $segmen->segmen_parent){{-- && $bacaan_detail->segmen_child != null --}}
                                         @if ($bacaan_detail->segmen_child == 0 && $bacaan_detail->arb != null)
-                                            <p @if($bacaan_detail->is_syiir || $bacaan_detail->segmen_child = null) class="text-center" @endif>{!! $bacaan_detail->arb !!}</p>
+                                            <p @if($bacaan_detail->is_syiir || $bacaan_detail->segmen_child = null || ($bacaan_detail->arb == null && $bacaan_detail->ina != null)) class="text-center" @endif>@if($bacaan_detail->arb == null && $bacaan_detail->ina != null) {!! $bacaan_detail->ina !!} @else {!! $bacaan_detail->arb !!} @endif</p>
                                             @if ($bacaan_detail->arb != null)
                                             <hr>
                                             @endif
                                         @else
-                                            <p @if($bacaan_detail->is_syiir || $bacaan_detail->segmen_child = null) class="text-center" @endif>{!! $bacaan_detail->arb !!}</p>
+                                            <p @if($bacaan_detail->is_syiir || $bacaan_detail->segmen_child = null || ($bacaan_detail->arb == null && $bacaan_detail->ina != null)) class="text-center" @endif>@if($bacaan_detail->arb == null && $bacaan_detail->ina != null) {!! $bacaan_detail->ina !!} @else {!! $bacaan_detail->arb !!} @endif</p>
                                             @if ($bacaan_detail->arb != null)
                                             <hr>
                                             @endif
@@ -122,7 +122,7 @@
                 <div class="content-body" id="content">
 
                     @forelse ($bacaan_details as $bacaan_detail)
-                    <p @if($bacaan_detail->is_syiir) class="text-center" @endif>{!! $bacaan_detail->arb !!}</p>
+                    <p @if($bacaan_detail->is_syiir || ($bacaan_detail->arb == null && $bacaan_detail->ina != null)) class="text-center" @endif>@if($bacaan_detail->arb == null && $bacaan_detail->ina != null) {!! $bacaan_detail->ina !!} @else {!! $bacaan_detail->arb !!} @endif</p>
                     <hr>
                     @empty
                     <h1 class="text-center">Data Kosong</h1>
