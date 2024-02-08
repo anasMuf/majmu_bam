@@ -26,7 +26,9 @@ Route::get('/clear', function() {
     return "Cleared!";
 });
 
-URL::forceScheme('https');
+if(env('APP_ENV') == 'production'){
+    URL::forceScheme('https');
+}
 
 // Route::get('/login', [AuthController::class,'main'])->name('login');
 
