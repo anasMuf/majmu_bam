@@ -21,7 +21,7 @@
         }
     ],
     "env": {
-        "APP_NAME": "Majmu Al-Manan",
+        "APP_NAME": "MajmuAlManan",
         "APP_ENV": "production",
         "APP_DEBUG": "true",
         "APP_URL": "https://majmu-manan.vercel.app",
