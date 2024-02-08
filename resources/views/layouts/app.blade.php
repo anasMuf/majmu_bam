@@ -4,7 +4,7 @@
 <head>
     <!--pwa-->
     {{-- <meta name="theme-color" content="#6777ef"/>
-    <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}"> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
