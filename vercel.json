@@ -8,7 +8,7 @@
     },
     "routes": [
         {
-            "src": "/(favicon\\.ico|robots\\.txt|logo\\.png|manifest\\.json|mix-manifest\\.json|sw\\.js)",
+            "src": "/(favicon\\.ico|robots\\.txt|logo\\.png|manifest\\.json|mix-manifest\\.json|sw\\.js|offline\\.html)",
             "dest": "/public/$1"
         },
         {
