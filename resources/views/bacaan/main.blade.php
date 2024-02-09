@@ -90,6 +90,12 @@
         });
     </script>
     <script>
+        function preload(param) {
+            console.log(param);
+            $('.collection-product-list').hide()
+            $('.preloader').show()
+        }
+
         function dataContent(param=null) {
             $('.collection-product-list').hide()
             $('.preloader').show()

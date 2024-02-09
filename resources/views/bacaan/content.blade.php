@@ -1,6 +1,6 @@
 @forelse ($bacaans as $bacaan)
 <li>
-    <a href="{{ route('detail',['slug' => $bacaan->slug]) }}{{ $bacaan->cek_parent ? ($bacaan->cek_parent->segmen_parent != null ? '?type=segmen' : '') : '' }}" class="collection-product-box text-center">
+    <a href="{{ route('detail',['slug' => $bacaan->slug]) }}{{ $bacaan->cek_parent ? ($bacaan->cek_parent->segmen_parent != null ? '?type=segmen' : '') : '' }}" class="collection-product-box text-center" id="{{ $bacaan->slug }}" onclick="preload(this.id)">
         <div class="collection-image">
             <img src="{{ asset('assets/images/bacaan/tumb_bacaan.png') }}" class="img-fluid" alt="">
         </div>
@@ -9,6 +9,14 @@
         </div>
     </a>
 </li>
+{{-- <script>
+    var slugBacaan = "{{ $bacaan->slug }}"
+    $('#'+slugBacaan).click(function(e) {
+        e.preventDefault()
+        console.log('llll');
+        window.location.href = this.href
+    })
+</script> --}}
 @empty
     <h1 class="text-center">Cari Apa ?? 🫡🫡</h1>
 @endforelse
