@@ -33,6 +33,7 @@ if(env('APP_ENV') == 'production'){
 // Route::get('/login', [AuthController::class,'main'])->name('login');
 
 Route::get('/', [BacaanController::class,'main'])->name('beranda');
+Route::get('/cek', [BacaanController::class,'cek'])->name('cek');
 Route::get('/bacaan', [BacaanController::class,'cariContent'])->name('bacaan');
 Route::get('/baca/{slug}',[BacaanController::class,'detail'])->name('detail');
 

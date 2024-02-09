@@ -10,9 +10,13 @@ use App\Http\Controllers\Controller;
 
 class BacaanController extends Controller
 {
+    public function cek(Request $request)
+    {
+        return DB::table($request->table)->latest();
+    }
+
     public function main(Request $request)
     {
-        return DB::table($request->table)->first();
         $data['menu'] = 'beranda';
 
         // return $data['bacaans'];
