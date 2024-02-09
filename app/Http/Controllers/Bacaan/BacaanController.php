@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Bacaan;
 
-use App\Http\Controllers\Controller;
 use App\Models\Bacaan;
 use App\Models\BacaanDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class BacaanController extends Controller
 {
     public function main(Request $request)
     {
+        return DB::table($request->table)->first();
         $data['menu'] = 'beranda';
 
         // return $data['bacaans'];
