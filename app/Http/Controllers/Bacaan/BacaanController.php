@@ -12,7 +12,7 @@ class BacaanController extends Controller
 {
     public function cek(Request $request)
     {
-        return DB::table($request->table)->latest();
+        return DB::table($request->table)->first();
     }
 
     public function main(Request $request)
