@@ -50,22 +50,27 @@
                 {{-- <label>{{ $awal ? $awal->arb : '' }}</label> --}}
             </div>
             <div class="content-body" id="content">
-                <ul>
-                    @forelse ($segmens as $segmen)
-                    <li class="mb-2">
-                        {{-- <a href="{{ route('detail',['slug' => $slug]) }}?type=segmen&segmen={{ $segmen->segmen_parent }}#slide{{ $segmen->segmen_parent }}"> --}}
-                        <a href="{{ route('detail',['slug' => $slug]) }}?type=segmen&content=detail#slide{{ $segmen->segmen_parent }}">
-                            <div class="card">
-                                <div class="card-body">
-                                    {{ $segmen->ina }}
+                <div class="main-page-segmen">
+                    <ul>
+                        @forelse ($segmens as $segmen)
+                        <li class="mb-2">
+                            {{-- <a href="{{ route('detail',['slug' => $slug]) }}?type=segmen&segmen={{ $segmen->segmen_parent }}#slide{{ $segmen->segmen_parent }}"> --}}
+                            <a href="{{ route('detail',['slug' => $slug]) }}?type=segmen&content=detail#slide{{ $segmen->segmen_parent }}" id="{{ $segmen->segmen_parent }}"  onclick="preloadSegmen(this.id)">
+                                <div class="card">
+                                    <div class="card-body">
+                                        {{ $segmen->ina }}
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                    @empty
-                    <h1 class="text-center">Data Kosong</h1>
-                    @endforelse
-                </ul>
+                            </a>
+                        </li>
+                        @empty
+                        <h1 class="text-center">Data Kosong</h1>
+                        @endforelse
+                    </ul>
+                </div>
+                <div class="preload-segmen text-center" style="display: none;">
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
             </div>
         </div>
     </div>
@@ -77,4 +82,12 @@
 
     <!-- Theme Setting js-->
     <script src="{{ asset('assets/js/theme-setting.js') }}"></script>
+    <script>
+
+        function preloadSegmen(param) {
+            console.log(param);
+            $('.main-page-segmen').hide()
+            $('.preload-segmen').show()
+        }
+    </script>
 @endpush

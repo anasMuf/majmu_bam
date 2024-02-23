@@ -42,6 +42,44 @@
     </div> --}}
     <!-- Mobile Section End -->
 
+    <!-- Action Sheet Button Start -->
+    {{-- <div class="action-sheet-button px-15 section-t-space-3 mb-3">
+        <button class="btn btn-gray" data-bs-toggle="offcanvas" data-bs-target="#filter-button">Atur ukuran font</button>
+    </div> --}}
+    <!-- Action Sheet Button End -->
+
+    <!-- Sort Offcanvas Start -->
+    {{-- <div class="offcanvas filter-button offcanvas-bottom theme-bottom-offcanvas" tabindex="-1" id="filter-button">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Pengaturan</h5>
+        </div>
+        <div class="offcanvas-body">
+            <div class="price-range-section">
+                <div class="flex relative justify-center items-center h-20 w-full mx-auto rounded">
+                    <div class="range-slider">
+
+                        <div class="progress"></div>
+                        <span class="range-min-wrapper">
+                            <input class="range-min" type="range" min="0" max="100" value="1">
+                        </span>
+                        <span class="range-max-wrapper">
+                            <input class="range-max" type="range" min="0" max="100" value="50">
+                        </span>
+                    </div>
+                    <div class="value-box">
+                        <div class="min-value numberVal">
+                            <input type="number" min="0" max="100" value="1" disabled>
+                        </div>
+                        <div class="max-value numberVal">
+                            <input type="number" min="0" max="100" value="50" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+    <!-- Sort Offcanvas End -->
+
     <!-- Search Section Start -->
     <section class="search-hotel-section section-b-space-2">
         <div class="custom-container">
@@ -107,7 +145,7 @@
                 $('.collection-product-list').show()
 
             }).fail(function(xhr, status, error){
-
+                console.log(error);
             })
         }
 

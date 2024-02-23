@@ -106,6 +106,8 @@
 
     <!-- Loader js -->
     {{-- <script src="{{ asset('assets/js/loader.js') }}"></script> --}}
+    <!-- Range slider js -->
+    <script src="{{ asset('assets/js/range-slider.js') }}"></script>
 
     <!-- Theme js-->
     <script src="{{ asset('assets/js/script.js') }}"></script>
