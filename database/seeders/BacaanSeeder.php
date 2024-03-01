@@ -65,9 +65,9 @@ class BacaanSeeder extends Seeder
             ],
             [
                 'judul_arb' => '',
-                'judul_latin' => 'Doa Khotmil Qur-an, Doa Birrulwalidain, Qosidah Romadhon',
+                'judul_latin' => 'Doa Birrulwalidain, Qosidah Romadhon',
                 'judul_ina' => '',
-                'slug' => 'doa-khotmil-quran-doa-birrulwalidain-qosidah-romadhon',
+                'slug' => 'doa-birrulwalidain-qosidah-romadhon',
                 'gambar' => '',
                 'keterangan' => '',
             ],
