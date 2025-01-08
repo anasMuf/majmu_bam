@@ -93,7 +93,7 @@
 
     <!-- pwa -->
     <script src="{{ asset('/sw.js') }}"></script>
-    @if(env('APP_ENV') == 'production')
+    @if(config('app.env') == 'production')
     <script>
     if (!navigator.serviceWorker.controller) {
         navigator.serviceWorker.register("/public/sw.js").then(function (reg) {
