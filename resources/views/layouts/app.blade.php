@@ -18,7 +18,8 @@
     <link rel="icon" href="{{ asset('logo.png') }}" type="image/x-icon">
     <link rel="shortcut icon" href="../" type="image/x-icon">
     <title>Majmu' BAM</title>
-    <link rel="manifest" href="../manifest.json">
+    {{-- <link rel="manifest" href="../manifest.json"> --}}
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
     <meta name="theme-color" content="#ff8d2f">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
