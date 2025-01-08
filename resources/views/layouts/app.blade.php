@@ -93,9 +93,18 @@
 
     <!-- pwa -->
     <script src="{{ asset('/sw.js') }}"></script>
+    @if(env('APP_ENV') == 'production')
+        <script>
+            var sw = "/public/sw.js";
+        </script>
+    @else
+        <script>
+            var sw = "/sw.js";
+        </script>
+    @endif
     <script>
     if (!navigator.serviceWorker.controller) {
-        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+        navigator.serviceWorker.register(sw).then(function (reg) {
             console.log("Service worker has been registered for scope: " + reg.scope);
         });
     }
