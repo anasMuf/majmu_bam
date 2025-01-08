@@ -94,21 +94,22 @@
     <!-- pwa -->
     <script src="{{ asset('/sw.js') }}"></script>
     @if(env('APP_ENV') == 'production')
-        <script>
-            var sw = "/public/sw.js";
-        </script>
-    @else
-        <script>
-            var sw = "/sw.js";
-        </script>
-    @endif
     <script>
     if (!navigator.serviceWorker.controller) {
-        navigator.serviceWorker.register(sw).then(function (reg) {
+        navigator.serviceWorker.register("/public/sw.js").then(function (reg) {
             console.log("Service worker has been registered for scope: " + reg.scope);
         });
     }
     </script>
+    @else
+    <script>
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+    </script>
+    @endif
     <!-- Theme Option Setting Box End -->
 
     <script src="{{ asset('assets/js/vendors/jquery/jquery-3.7.1.min.js') }}"></script>
