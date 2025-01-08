@@ -10,7 +10,7 @@ class Preferensi extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $connection = 'pgsql';
+
     protected $primaryKey = 'id_preferensi';
 
     public function preferensi_user(){

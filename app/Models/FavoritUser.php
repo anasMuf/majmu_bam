@@ -10,7 +10,7 @@ class FavoritUser extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $connection = 'pgsql';
+
     protected $primaryKey = 'id_favorit_user';
 
     public function user(){

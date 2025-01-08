@@ -10,7 +10,7 @@ class BacaanDetail extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $connection = 'pgsql';
+
     protected $primaryKey = 'id_bacaan_detail';
     protected $guarded = ['id_bacaan_detail'];
 
