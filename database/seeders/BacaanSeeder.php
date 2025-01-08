@@ -20,15 +20,15 @@ class BacaanSeeder extends Seeder
                 'judul_latin' => 'Wasilah Fatihah',
                 'judul_ina' => '',
                 'slug' => 'wasilah-fatihah',
-                'gambar' => '',
+                'gambar' => 'wasilah_fatihah.png',
                 'keterangan' => '',
             ],
             [
                 'judul_arb' => '',
-                'judul_latin' => 'Tahlil Qubro',
+                'judul_latin' => 'Tahlil Kubro',
                 'judul_ina' => '',
-                'slug' => 'tahlil-qubro',
-                'gambar' => '',
+                'slug' => 'tahlil-kubro',
+                'gambar' => 'tahlil_kubro.png',
                 'keterangan' => '',
             ],
             [
@@ -36,7 +36,7 @@ class BacaanSeeder extends Seeder
                 'judul_latin' => 'Manaqib',
                 'judul_ina' => '',
                 'slug' => 'manaqib',
-                'gambar' => '',
+                'gambar' => 'manaqib.png',
                 'keterangan' => 'Manaqib syaih Abdul Qodir al jiilany',
             ],
             [
@@ -44,7 +44,7 @@ class BacaanSeeder extends Seeder
                 'judul_latin' => 'Asmaul Husna',
                 'judul_ina' => '',
                 'slug' => 'asmaul-husna',
-                'gambar' => '',
+                'gambar' => 'asmaul_husna.png',
                 'keterangan' => '',
             ],
             [
@@ -52,7 +52,7 @@ class BacaanSeeder extends Seeder
                 'judul_latin' => 'Rotibul Haddad',
                 'judul_ina' => '',
                 'slug' => 'rotibul-haddad',
-                'gambar' => '',
+                'gambar' => 'rotibul_haddad.png',
                 'keterangan' => '',
             ],
             [
@@ -60,7 +60,7 @@ class BacaanSeeder extends Seeder
                 'judul_latin' => 'Sholawat Nariyah',
                 'judul_ina' => '',
                 'slug' => 'sholawat-nariyah',
-                'gambar' => '',
+                'gambar' => 'sholawat_nariyah.png',
                 'keterangan' => '',
             ],
             [
@@ -68,7 +68,7 @@ class BacaanSeeder extends Seeder
                 'judul_latin' => 'Doa Birrulwalidain, Qosidah Romadhon',
                 'judul_ina' => '',
                 'slug' => 'doa-birrulwalidain-qosidah-romadhon',
-                'gambar' => '',
+                'gambar' => 'doa_birrulwaalidain_qosidah_romadhon.png',
                 'keterangan' => '',
             ],
         ];

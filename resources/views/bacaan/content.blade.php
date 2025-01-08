@@ -2,7 +2,7 @@
 <li>
     <a href="{{ route('detail',['slug' => $bacaan->slug]) }}{{ $bacaan->cek_parent ? ($bacaan->cek_parent->segmen_parent != null ? '?type=segmen' : '') : '' }}" class="collection-product-box text-center" id="{{ $bacaan->slug }}" onclick="preload(this.id)">
         <div class="collection-image">
-            <img src="{{ asset('assets/images/bacaan/tumb_bacaan.png') }}" class="img-fluid" alt="">
+            <img src="{{ asset('assets/images/bacaan/'.$bacaan->gambar) }}" class="img-fluid" alt="" width="112" height="112">
         </div>
         <div class="collection-content-bacaan">
             <h5>{{ $bacaan->judul_latin }}</h5>
