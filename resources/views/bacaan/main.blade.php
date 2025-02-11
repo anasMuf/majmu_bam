@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @push('css')
-    {{-- <livewire:styles/>
-    <livewire:scripts/> --}}
 @endpush
 
 @section('content')
@@ -126,6 +124,11 @@
         $(document).ready(function () {
             dataContent()
         });
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                dataContent();
+            }
+        };
     </script>
     <script>
         function preload(param) {

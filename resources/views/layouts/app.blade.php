@@ -4,7 +4,7 @@
 <head>
     <!--pwa-->
     {{-- <meta name="theme-color" content="#6777ef"/>
-    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+    <link rel="touch-icon" href="{{ asset('logo.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}"> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -21,9 +21,9 @@
     {{-- <link rel="manifest" href="../manifest.json"> --}}
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
     <meta name="theme-color" content="#ff8d2f">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="majmu bam">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-title" content="majmu bam">
     <meta name="msapplication-TileImage" content="{{ asset('logo.png') }}">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,8 +73,6 @@
         }
     </style>
     @stack('css')
-    {{-- <livewire:styles/>
-    <livewire:scripts/> --}}
 </head>
 
 <body class="">
